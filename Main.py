@@ -122,7 +122,6 @@ class runres_calc (QMainWindow) :
         runres_wheel = runres_vehicle * jari_jari
         runres_motor = runres_wheel/final_gr
         
-        print(runres_vehicle)
         self.RunresVehicle.canvas.ax.clear()
         # for i in range (0,len(variasi_array)):
         self.RunresVehicle.canvas.ax.plot(v_runres,runres_vehicle)
@@ -133,9 +132,26 @@ class runres_calc (QMainWindow) :
         self.RunresVehicle.canvas.figure.tight_layout()
         self.RunresVehicle.canvas.draw()
 
+        self.RunresWheel.canvas.ax.clear()
+        self.RunresWheel.canvas.ax.plot(v_runres,runres_wheel)
+        self.RunresWheel.canvas.ax.set_xlabel("Speed (km/h)")
+        self.RunresWheel.canvas.ax.set_ylabel("Torque (Nm)")
+        self.RunresWheel.canvas.ax.set_title("Wheel Running Resistance")
+        self.RunresWheel.canvas.ax.grid()
+        self.RunresWheel.canvas.figure.tight_layout()
+        self.RunresWheel.canvas.draw()
+
+        self.RunresMotor.canvas.ax.clear()
+        self.RunresMotor.canvas.ax.plot(v_runres,runres_motor)
+        self.RunresMotor.canvas.ax.set_xlabel("Speed (km/h)")
+        self.RunresMotor.canvas.ax.set_ylabel("Torque (Nm)")
+        self.RunresMotor.canvas.ax.set_title("Motor Running Resistance")
+        self.RunresMotor.canvas.ax.grid()
+        self.RunresMotor.canvas.figure.tight_layout()
+        self.RunresMotor.canvas.draw()
 
 app = QApplication([])
 mainwindow = runres_calc()
 app.setQuitOnLastWindowClosed(True)
-mainwindow.show()
+mainwindow.showMaximized()
 sys.exit(app.exec_())

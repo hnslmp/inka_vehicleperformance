@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1206</width>
+    <width>1704</width>
     <height>947</height>
    </rect>
   </property>
@@ -1675,6 +1675,26 @@ background-color: rgb(255, 255, 127);</string>
      </rect>
     </property>
    </widget>
+   <widget class="RunresWheel" name="RunresWheel" native="true">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>480</y>
+      <width>481</width>
+      <height>371</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="RunresMotor" name="RunresMotor" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1210</x>
+      <y>280</y>
+      <width>481</width>
+      <height>371</height>
+     </rect>
+    </property>
+   </widget>
    <zorder>graphicsView_2</zorder>
    <zorder>graphicsView_3</zorder>
    <zorder>graphicsView</zorder>
@@ -1771,14 +1791,16 @@ background-color: rgb(255, 255, 127);</string>
    <zorder>TombolCalculate</zorder>
    <zorder>output_final_gr</zorder>
    <zorder>RunresVehicle</zorder>
+   <zorder>RunresWheel</zorder>
+   <zorder>RunresMotor</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1206</width>
-     <height>31</height>
+     <width>1704</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
@@ -1789,6 +1811,18 @@ background-color: rgb(255, 255, 127);</string>
    <class>RunresVehicle</class>
    <extends>QWidget</extends>
    <header>runresvehicle.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RunresWheel</class>
+   <extends>QWidget</extends>
+   <header>runreswheel.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RunresMotor</class>
+   <extends>QWidget</extends>
+   <header>runresmotor.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

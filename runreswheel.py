@@ -6,7 +6,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.backends.backend_qt5agg import ( NavigationToolbar2QT  as  NavigationToolbar )
 from matplotlib.figure import Figure
 
-class RunresVehicle (QWidget):
+class RunresWheel (QWidget):
     def __init__(self, parent = None):
         QWidget.__init__(self,parent)
 
@@ -22,6 +22,6 @@ class RunresVehicle (QWidget):
         self.canvas.ax.clear()
         self.canvas.figure.tight_layout()
         self.setLayout(vertical_layout)
-        self.canvas.ax.set_title("Vehicle Running Resistance")
+        self.canvas.ax.set_title("Wheel Running Resistance")
         self.canvas.figure.tight_layout()
         self.canvas.draw()
