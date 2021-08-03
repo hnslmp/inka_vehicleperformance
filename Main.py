@@ -13,18 +13,13 @@ import atexit
 # Plotter
 import numpy as np
 from scipy import constants
-import pandas as pd
-import math
-
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 import matplotlib
+import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import ( NavigationToolbar2QT  as  NavigationToolbar )
 from matplotlib.figure import Figure
 
 # Program Input Window
-import json
-import http.client
 from datetime import datetime
 
 # lebar   = 0.0
@@ -92,7 +87,7 @@ class runres_calc (QMainWindow) :
         t_ramp  = float(self.input_t_ramp.text())
         accel   = kec_max_kmh/3.6/t_ramp
         theta   = float(self.input_theta.text())
-        theta_percentage = np.tan(np.radians(theta))
+        theta_percentage = np.tan(np.radians(theta))*100
 
         crr = float(self.input_crr.text())
         cd  = float(self.input_cd.text())
@@ -105,7 +100,7 @@ class runres_calc (QMainWindow) :
         self.output_kec_max_rpm.setText(str(round(kec_max_rpm,3)))
         self.output_kec_ops_rpm.setText(str(round(kec_ops_rpm,3)))
         self.output_accel.setText(str(round(accel,3)))
-        self.output_theta_percentage.setText(str(round(theta_percentage,3)) + "%")
+        self.output_theta_percentage.setText(str(round(theta_percentage,3)))
 
         #Menghitung Running Resistance
         v_runres = np.arange(0,121,1)
@@ -113,7 +108,7 @@ class runres_calc (QMainWindow) :
         jumlah_variasi = 5
         variasi_array = np.arange(0,jumlah_variasi+1,1)
         pengali = variasi_array/jumlah_variasi
-        gradien = np.full(shape=len(variasi_array),fill_value=theta,dtype=np.int)*pengali
+        gradien = np.full(shape=len(variasi_array),fill_value=theta,dtype=int)*pengali
 
         rd = rho/2*af*cd*np.square((v_runres/3.6+vw/3.6))
         rg = massa_total*g*np.sin(np.radians(gradien))
@@ -126,15 +121,18 @@ class runres_calc (QMainWindow) :
         runres_vehicle = np.reshape(runres_vehicle,(len(v_runres),len(variasi_array)),order='F')
         runres_wheel = runres_vehicle * jari_jari
         runres_motor = runres_wheel/final_gr
+        
+        print(runres_vehicle)
+        self.RunresVehicle.canvas.ax.clear()
+        # for i in range (0,len(variasi_array)):
+        self.RunresVehicle.canvas.ax.plot(v_runres,runres_vehicle)
+        self.RunresVehicle.canvas.ax.set_xlabel("Speed (km/h)")
+        self.RunresVehicle.canvas.ax.set_ylabel("Force (N)")
+        self.RunresVehicle.canvas.ax.set_title("Vehicle Running Resistance")
+        self.RunresVehicle.canvas.ax.grid()
+        self.RunresVehicle.canvas.figure.tight_layout()
+        self.RunresVehicle.canvas.draw()
 
-        self.RunresVehicle.canvas.axes.clear()
-        self.RunresVehicle.axes.plot(v_runres,runres_vehicle)
-        self.RunresVehicle.axes.set_xlabel("Speed (km/h)")
-        self.RunresVehicle.axes.set_ylabel("Force (N)")
-        self.RunresVehicle.axes.set_title("Vehicle Running Resistance")
-        self.RunresVehicle.grid()
-        self.RunresVehicle.tight_layout()
-        self.RunresVehicle.draw()
 
 app = QApplication([])
 mainwindow = runres_calc()
