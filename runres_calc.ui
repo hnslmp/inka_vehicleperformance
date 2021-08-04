@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1704</width>
-    <height>947</height>
+    <width>1600</width>
+    <height>990</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -67,7 +67,7 @@ background-color: rgb(255, 255, 127);</string>
      </font>
     </property>
     <property name="text">
-     <string>ELECTRIC VEHICLE PERFORMANCE CALCULATOR</string>
+     <string>RUNNING RESISTANCE CALCULATOR</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_App2">
@@ -89,662 +89,20 @@ background-color: rgb(255, 255, 127);</string>
      <string>by INKA</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_Subjudul1">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>140</y>
-      <width>231</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani SemiBold</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Luas Permukaan Kendaraan</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_lebar">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>166</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>2.10</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>170</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Lebar</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>200</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Tinggi</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>170</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>m</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_tinggi">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>200</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>3.57</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>200</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>m</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>200</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>m</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_af">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>200</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>6.37</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_ca">
-    <property name="geometry">
-     <rect>
-      <x>260</x>
-      <y>166</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0.85</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_11">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>200</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Af</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_12">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>170</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Ca</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_10">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>190</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-      <pointsize>6</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>2</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_kode">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>266</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>235/75-r17.5</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Subjudul2">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>240</y>
-      <width>231</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani SemiBold</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Ukuran Ban</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_21">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>270</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Kode</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_22">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>270</y>
-      <width>71</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Jari-Jari</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_jari_jari">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>270</y>
-      <width>41</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0.40</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Subjudul3">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>310</y>
-      <width>231</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani SemiBold</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Massa</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_13">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>370</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>kg</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_massa_isi">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>370</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>1020</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_16">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>340</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>kg</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_massa_kosong">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>336</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>8180</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_17">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>340</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Total</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_18">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>370</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Isi</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_24">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>340</y>
-      <width>71</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Kosong</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_25">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>340</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>kg</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="output_massa_total">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>340</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_axle">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>470</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>5.86</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_26">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>470</y>
-      <width>71</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Mech Eff</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_gearbox">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>436</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>1</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_28">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>440</y>
-      <width>71</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Final GR</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_29">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>470</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Axle</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_mech_eff">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>470</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>1</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Subjudul4">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>410</y>
-      <width>231</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani SemiBold</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Gear Ratio</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_32">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>440</y>
-      <width>71</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Gear Box</string>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="graphicsView">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>100</y>
-      <width>351</width>
-      <height>461</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_40">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>169</y>
-      <width>51</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>CRR</string>
-    </property>
-   </widget>
    <widget class="QGraphicsView" name="graphicsView_3">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>470</x>
       <y>100</y>
       <width>301</width>
-      <height>461</height>
+      <height>471</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Subjudul5">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>140</y>
-      <width>231</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani SemiBold</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Rolling Resistance</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_judul2">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>480</x>
       <y>110</y>
       <width>221</width>
       <height>21</height>
@@ -778,450 +136,11 @@ background-color: rgb(255, 255, 127);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLineEdit" name="input_crr">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>166</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0.02</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Subjudul6">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>210</y>
-      <width>231</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani SemiBold</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Drag Resistance</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_cd">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>237</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>1.05</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_41">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>240</y>
-      <width>51</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>CD</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Subjudul7">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>280</y>
-      <width>231</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani SemiBold</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Massa Jenis Udara</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_rho">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>307</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>1.25</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_43">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>310</y>
-      <width>51</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Rho</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Subjudul8">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>350</y>
-      <width>231</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani SemiBold</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Kecepatan Angin</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_vw">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>377</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_44">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>380</y>
-      <width>51</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Vw</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Subjudul9">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>420</y>
-      <width>231</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani SemiBold</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Percepatan Gravitasi</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_g">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>447</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>9.81</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_45">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>450</y>
-      <width>51</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>g</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_48">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>530</y>
-      <width>51</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>CA</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_ca_2">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>527</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>1</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_Subjudul10">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>500</y>
-      <width>231</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani SemiBold</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Acceleration Margin</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_64">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>380</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>km/h</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_51">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>450</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>m/s</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_52">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>440</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-      <pointsize>6</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>2</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_33">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>810</y>
-      <width>81</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Theta (%)</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_kec_max_kmh">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>636</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>90</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_15">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>640</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Maks</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_35">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>730</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-      <pointsize>6</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>2</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_56">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>670</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>km/h</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_49">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>670</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>km/h</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_34">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>670</y>
-      <width>61</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Operasi</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_Subjudul12">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>710</y>
+      <x>40</x>
+      <y>721</y>
       <width>231</width>
       <height>19</height>
      </rect>
@@ -1235,96 +154,11 @@ background-color: rgb(255, 255, 127);</string>
      <string>Akselerasi</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_39">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>670</y>
-      <width>111</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Operasi (Rpm)</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_50">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>640</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>km/h</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_27">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>810</y>
-      <width>71</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Theta</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_kec_ops_kmh">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>670</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>50</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_54">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>810</y>
-      <width>61</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Derajat</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_Judul3">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>580</y>
+      <y>591</y>
       <width>211</width>
       <height>21</height>
      </rect>
@@ -1357,29 +191,11 @@ background-color: rgb(255, 255, 127);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_47">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>640</y>
-      <width>101</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Maks (Rpm)</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_Subjudul13">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>780</y>
+      <x>40</x>
+      <y>791</y>
       <width>231</width>
       <height>19</height>
      </rect>
@@ -1393,96 +209,11 @@ background-color: rgb(255, 255, 127);</string>
      <string>Gradien</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_57">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>640</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>km/h</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="output_kec_max_rpm">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>640</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="output_kec_ops_rpm">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>670</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_42">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>740</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>t ramp</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_t_ramp">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>736</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>20</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_Subjudul11">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>610</y>
+      <x>40</x>
+      <y>621</y>
       <width>231</width>
       <height>19</height>
      </rect>
@@ -1496,142 +227,21 @@ background-color: rgb(255, 255, 127);</string>
      <string>Kecepatan</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_31">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>740</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>m/s</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="output_accel">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>740</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_61">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>810</y>
-      <width>61</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>%</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_36">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>740</y>
-      <width>21</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>a</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="input_theta">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>806</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>8</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="output_theta_percentage">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>810</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QGraphicsView" name="graphicsView_2">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>570</y>
-      <width>661</width>
-      <height>311</height>
+      <y>581</y>
+      <width>741</width>
+      <height>281</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_55">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>740</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>s</string>
     </property>
    </widget>
    <widget class="QPushButton" name="TombolCalculate">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>800</y>
+      <x>30</x>
+      <y>870</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -1647,28 +257,10 @@ background-color: rgb(255, 255, 127);</string>
      <string>CALCULATE</string>
     </property>
    </widget>
-   <widget class="QLabel" name="output_final_gr">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>440</y>
-      <width>51</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Biryani</family>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="RunresVehicle" name="RunresVehicle" native="true">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>780</x>
       <y>100</y>
       <width>481</width>
       <height>371</height>
@@ -1678,8 +270,8 @@ background-color: rgb(255, 255, 127);</string>
    <widget class="RunresWheel" name="RunresWheel" native="true">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>480</y>
+      <x>780</x>
+      <y>490</y>
       <width>481</width>
       <height>371</height>
      </rect>
@@ -1688,121 +280,1928 @@ background-color: rgb(255, 255, 127);</string>
    <widget class="RunresMotor" name="RunresMotor" native="true">
     <property name="geometry">
      <rect>
-      <x>1210</x>
-      <y>280</y>
+      <x>1270</x>
+      <y>100</y>
       <width>481</width>
       <height>371</height>
      </rect>
     </property>
    </widget>
+   <widget class="QLabel" name="label_Subjudul1">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>140</y>
+      <width>231</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Biryani SemiBold</family>
+     </font>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>-2</number>
+    </property>
+    <property name="text">
+     <string>Luas Permukaan Kendaraan</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="indent">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Subjudul2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>250</y>
+      <width>414</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Biryani SemiBold</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Ukuran Ban</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Subjudul3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>350</y>
+      <width>414</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Biryani SemiBold</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Massa</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_Subjudul4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>460</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Biryani SemiBold</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>Gear Ratio</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_5">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>140</y>
+      <width>171</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_9">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_Subjudul5">
+       <property name="font">
+        <font>
+         <family>Biryani SemiBold</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Rolling Resistance</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QFormLayout" name="formLayout_6">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::FieldsStayAtSizeHint</enum>
+       </property>
+       <property name="rowWrapPolicy">
+        <enum>QFormLayout::DontWrapRows</enum>
+       </property>
+       <property name="labelAlignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="formAlignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_40">
+         <property name="font">
+          <font>
+           <family>Biryani</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>CRR</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="input_crr">
+         <property name="minimumSize">
+          <size>
+           <width>76</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>77</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>0.02</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Subjudul6">
+       <property name="font">
+        <font>
+         <family>Biryani SemiBold</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Drag Resistance</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QFormLayout" name="formLayout_10">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_41">
+         <property name="minimumSize">
+          <size>
+           <width>33</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Biryani</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>CD</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="input_cd">
+         <property name="minimumSize">
+          <size>
+           <width>77</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>77</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>1.05</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Subjudul7">
+       <property name="font">
+        <font>
+         <family>Biryani SemiBold</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Massa Jenis Udara</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QFormLayout" name="formLayout_16">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_43">
+         <property name="minimumSize">
+          <size>
+           <width>33</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Biryani</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>Rho</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="input_rho">
+         <property name="minimumSize">
+          <size>
+           <width>77</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>77</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>1.25</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Subjudul8">
+       <property name="font">
+        <font>
+         <family>Biryani SemiBold</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Kecepatan Angin</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_24">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QFormLayout" name="formLayout_17">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_44">
+           <property name="minimumSize">
+            <size>
+             <width>33</width>
+             <height>29</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>33</width>
+             <height>29</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Biryani</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>Vw</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="input_vw">
+           <property name="minimumSize">
+            <size>
+             <width>77</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>77</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_64">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>42</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>42</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Biryani</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>km/h</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Subjudul9">
+       <property name="font">
+        <font>
+         <family>Biryani SemiBold</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Percepatan Gravitasi</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_25">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QFormLayout" name="formLayout_18">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_45">
+           <property name="minimumSize">
+            <size>
+             <width>33</width>
+             <height>29</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>33</width>
+             <height>29</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Biryani</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>g</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="input_g">
+           <property name="minimumSize">
+            <size>
+             <width>77</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>77</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>9.81</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_51">
+         <property name="minimumSize">
+          <size>
+           <width>42</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>42</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Biryani</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>m/s</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_Subjudul10">
+       <property name="font">
+        <font>
+         <family>Biryani SemiBold</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Acceleration Margin</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QFormLayout" name="formLayout_19">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_48">
+         <property name="minimumSize">
+          <size>
+           <width>33</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>33</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Biryani</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>CA</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="input_ca_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>77</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>77</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>480</y>
+      <width>163</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_15">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_28">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Final GR</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="output_final_gr">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_26">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Mech Eff</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="input_mech_eff">
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>480</y>
+      <width>191</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_14">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_32">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Gear Box</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_gearbox">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_29">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Axle</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="input_axle">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>5.86</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>170</y>
+      <width>18</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_7">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>m</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_8">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>m</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>170</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout">
+     <property name="labelAlignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="formAlignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="minimumSize">
+        <size>
+         <width>71</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Lebar</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_lebar">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>2.10</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Tinggi</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="input_tinggi">
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>3.57</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>370</y>
+      <width>21</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_11">
+     <item>
+      <widget class="QLabel" name="label_16">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>kg</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_13">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>kg</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_5">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>370</y>
+      <width>161</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_7">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_24">
+       <property name="minimumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Kosong</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_18">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Isi</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_massa_kosong">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>8180</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="input_massa_isi">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>1020</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>170</y>
+      <width>27</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QLabel" name="label_9">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_14">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>m2</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::PlainText</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>170</y>
+      <width>175</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_2">
+     <property name="formAlignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="minimumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Ca</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_ca">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0.85</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Af</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="input_af">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>6.37</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_11">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>310</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_20">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_22">
+       <property name="minimumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Jari-Jari</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_jari_jari">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>0.40</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>310</y>
+      <width>16</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Biryani</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>m</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_12">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>270</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_21">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_21">
+       <property name="minimumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Kode</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_kode">
+       <property name="minimumSize">
+        <size>
+         <width>114</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>114</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>235/75-r17.5</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>100</y>
+      <width>431</width>
+      <height>471</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>641</y>
+      <width>201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_23">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_15">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Maks</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_kec_max_kmh">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>90</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="input_kec_ops_kmh">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>50</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_34">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Operasi</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_13">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>641</y>
+      <width>201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_24">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_47">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Maks (Rpm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_39">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Operasi (Rpm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="output_kec_ops_rpm">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="output_kec_max_rpm">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>641</y>
+      <width>51</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <widget class="QLabel" name="label_57">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>km/h</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_56">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>km/h</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_14">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>741</y>
+      <width>200</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_25">
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_t_ramp">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>20</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_42">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>t ramp</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_15">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>741</y>
+      <width>200</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_26">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_36">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>a</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="output_accel">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_6">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>740</y>
+      <width>16</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_12">
+     <item>
+      <widget class="QLabel" name="label_55">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>s</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_7">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>641</y>
+      <width>51</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_14">
+     <item>
+      <widget class="QLabel" name="label_60">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>km/h</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_62">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>km/h</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_8">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>740</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_18">
+     <item>
+      <widget class="QLabel" name="label_31">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>m/s2</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_16">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>811</y>
+      <width>200</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_27">
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_theta">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>8</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_27">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Theta</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_9">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>811</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_19">
+     <item>
+      <widget class="QLabel" name="label_54">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Derajat</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_17">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>811</y>
+      <width>200</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_28">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_33">
+       <property name="minimumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>112</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Theta (%)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="output_theta_percentage">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_10">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>811</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_20">
+     <item>
+      <widget class="QLabel" name="label_61">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>%</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_18">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>370</y>
+      <width>160</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_29">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_17">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Total</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="output_massa_total">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>                         </string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_25">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>370</y>
+      <width>19</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Biryani</family>
+     </font>
+    </property>
+    <property name="text">
+     <string>kg</string>
+    </property>
+   </widget>
    <zorder>graphicsView_2</zorder>
-   <zorder>graphicsView_3</zorder>
    <zorder>graphicsView</zorder>
+   <zorder>graphicsView_3</zorder>
    <zorder>label_Judul1</zorder>
    <zorder>label_App1</zorder>
    <zorder>label_App2</zorder>
-   <zorder>label_Subjudul1</zorder>
-   <zorder>input_lebar</zorder>
-   <zorder>label_5</zorder>
-   <zorder>label_6</zorder>
-   <zorder>label_7</zorder>
-   <zorder>input_tinggi</zorder>
-   <zorder>label_8</zorder>
-   <zorder>label_9</zorder>
-   <zorder>input_af</zorder>
-   <zorder>input_ca</zorder>
-   <zorder>label_11</zorder>
-   <zorder>label_12</zorder>
-   <zorder>label_10</zorder>
-   <zorder>input_kode</zorder>
-   <zorder>label_Subjudul2</zorder>
-   <zorder>label_21</zorder>
-   <zorder>label_22</zorder>
-   <zorder>input_jari_jari</zorder>
-   <zorder>label_Subjudul3</zorder>
-   <zorder>label_13</zorder>
-   <zorder>input_massa_isi</zorder>
-   <zorder>label_16</zorder>
-   <zorder>input_massa_kosong</zorder>
-   <zorder>label_17</zorder>
-   <zorder>label_18</zorder>
-   <zorder>label_24</zorder>
-   <zorder>label_25</zorder>
-   <zorder>output_massa_total</zorder>
-   <zorder>input_axle</zorder>
-   <zorder>label_26</zorder>
-   <zorder>input_gearbox</zorder>
-   <zorder>label_28</zorder>
-   <zorder>label_29</zorder>
-   <zorder>input_mech_eff</zorder>
-   <zorder>label_Subjudul4</zorder>
-   <zorder>label_32</zorder>
-   <zorder>label_40</zorder>
-   <zorder>label_Subjudul5</zorder>
    <zorder>label_judul2</zorder>
-   <zorder>input_crr</zorder>
-   <zorder>label_Subjudul6</zorder>
-   <zorder>input_cd</zorder>
-   <zorder>label_41</zorder>
-   <zorder>label_Subjudul7</zorder>
-   <zorder>input_rho</zorder>
-   <zorder>label_43</zorder>
-   <zorder>label_Subjudul8</zorder>
-   <zorder>input_vw</zorder>
-   <zorder>label_44</zorder>
-   <zorder>label_Subjudul9</zorder>
-   <zorder>input_g</zorder>
-   <zorder>label_45</zorder>
-   <zorder>label_48</zorder>
-   <zorder>input_ca_2</zorder>
-   <zorder>label_Subjudul10</zorder>
-   <zorder>label_64</zorder>
-   <zorder>label_51</zorder>
-   <zorder>label_52</zorder>
-   <zorder>label_33</zorder>
-   <zorder>input_kec_max_kmh</zorder>
-   <zorder>label_15</zorder>
-   <zorder>label_35</zorder>
-   <zorder>label_56</zorder>
-   <zorder>label_49</zorder>
-   <zorder>label_34</zorder>
    <zorder>label_Subjudul12</zorder>
-   <zorder>label_39</zorder>
-   <zorder>label_50</zorder>
-   <zorder>label_27</zorder>
-   <zorder>input_kec_ops_kmh</zorder>
-   <zorder>label_54</zorder>
    <zorder>label_Judul3</zorder>
-   <zorder>label_47</zorder>
    <zorder>label_Subjudul13</zorder>
-   <zorder>label_57</zorder>
-   <zorder>output_kec_max_rpm</zorder>
-   <zorder>output_kec_ops_rpm</zorder>
-   <zorder>label_42</zorder>
-   <zorder>input_t_ramp</zorder>
    <zorder>label_Subjudul11</zorder>
-   <zorder>label_31</zorder>
-   <zorder>output_accel</zorder>
-   <zorder>label_61</zorder>
-   <zorder>label_36</zorder>
-   <zorder>input_theta</zorder>
-   <zorder>output_theta_percentage</zorder>
-   <zorder>label_55</zorder>
    <zorder>TombolCalculate</zorder>
-   <zorder>output_final_gr</zorder>
    <zorder>RunresVehicle</zorder>
    <zorder>RunresWheel</zorder>
    <zorder>RunresMotor</zorder>
+   <zorder>label_Subjudul1</zorder>
+   <zorder>label_Subjudul2</zorder>
+   <zorder>label_Subjudul3</zorder>
+   <zorder>label_Subjudul4</zorder>
+   <zorder>verticalLayoutWidget_5</zorder>
+   <zorder></zorder>
+   <zorder></zorder>
+   <zorder>verticalLayoutWidget</zorder>
+   <zorder>formLayoutWidget</zorder>
+   <zorder>verticalLayoutWidget_4</zorder>
+   <zorder>formLayoutWidget_5</zorder>
+   <zorder>verticalLayoutWidget_2</zorder>
+   <zorder>formLayoutWidget_2</zorder>
+   <zorder>formLayoutWidget_11</zorder>
+   <zorder>label_20</zorder>
+   <zorder>formLayoutWidget_12</zorder>
+   <zorder>formLayoutWidget_3</zorder>
+   <zorder>formLayoutWidget_13</zorder>
+   <zorder>verticalLayoutWidget_3</zorder>
+   <zorder>formLayoutWidget_14</zorder>
+   <zorder>formLayoutWidget_15</zorder>
+   <zorder>verticalLayoutWidget_6</zorder>
+   <zorder>verticalLayoutWidget_7</zorder>
+   <zorder>verticalLayoutWidget_8</zorder>
+   <zorder>formLayoutWidget_16</zorder>
+   <zorder>verticalLayoutWidget_9</zorder>
+   <zorder>formLayoutWidget_17</zorder>
+   <zorder>verticalLayoutWidget_10</zorder>
+   <zorder>formLayoutWidget_18</zorder>
+   <zorder>label_25</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1704</width>
-     <height>26</height>
+     <width>1600</width>
+     <height>31</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuRunning_Resistance">
+    <property name="title">
+     <string>Running Resistance</string>
+    </property>
+   </widget>
+   <addaction name="menuRunning_Resistance"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
