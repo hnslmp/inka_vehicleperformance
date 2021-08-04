@@ -41,6 +41,13 @@ from datetime import datetime
 # rho = 0.0
 # g = 0.0
 # ca = 0.0
+# const_t         = 908.19
+# highacc_const_t = 1251.89
+# wp              = 35
+
+# v_cruise            = 60
+# s_cruise            = 200
+# cruise_percentage   = 33
 
 class runres_calc (QMainWindow) :
     def __init__(self):
@@ -96,6 +103,14 @@ class runres_calc (QMainWindow) :
         g   = float(self.input_g.text())
         ca  = float(self.input_ca.text())
 
+        const_t         = float(self.input_const_t.text())
+        highacc_const_t = float(self.input_highacc_const_t.text())
+        wp              = float(self.input_wp.text())
+
+        v_cruise            = float(self.input_v_cruise.text())
+        s_cruise            = float(self.input_s_cruise.text())
+        cruise_percentage   = float(self.input_cruise_percentage.text())
+
         self.output_massa_total.setText(str(round(massa_total,3)))
         self.output_final_gr.setText(str(round(final_gr,3)))
         self.output_kec_max_rpm.setText(str(round(kec_max_rpm,3)))
@@ -123,8 +138,67 @@ class runres_calc (QMainWindow) :
         runres_wheel = runres_vehicle * jari_jari
         runres_motor = runres_wheel/final_gr
         
+        # Mencari Vehicle Force       
+        const_f = const_t*final_gr/jari_jari*gearbox
+        v_wp    = wp/3.6
+        const_p = const_f*v_wp
+
+        const_p_real = const_p/(v_runres[1:]/3.6)
+        const_p_real = np.insert(const_p_real,0,const_p_real[0])
+        const_f_real = np.full(shape=len(const_p_real),fill_value=const_f,dtype=np.int)
+
+        const_fp_real = np.concatenate((const_f_real,const_p_real))
+        const_fp_real = np.reshape(const_fp_real,(len(const_p_real),2),order='F')
+
+        #Tractive Effort
+        vehicle_force       = const_fp_real.min(axis=1)
+        wheel_torque        = vehicle_force*jari_jari
+        motor_torque        = wheel_torque/final_gr/mech_eff
+        motor_cruise_torque = motor_torque*cruise_percentage/100
+
+        vehicle_force_arr = vehicle_force.reshape(vehicle_force.shape[0],-1)
+        temp = vehicle_force_arr
+        for i in range (0,5):
+            vehicle_force_arr = np.concatenate((vehicle_force_arr,temp),axis=1)
+        # print ( np.concatenate((,vehicle_force),axis=1))
+        # print(vehicle_force_arr)
+
+        accel_real     = np.subtract(vehicle_force_arr,runres_vehicle)/massa_total
+
+        for i in range (len(accel_real)):
+            if accel_real[i,0] < 0:
+                break
+            idx = i
+
+        avg_accel_real  = accel_real[:idx,0].mean()
+        p_motor         = (const_t*mech_eff*final_gr/jari_jari)*(wp/3.6)/1000
+        highacc_wp = 3.6*p_motor*1000*jari_jari/highacc_const_t/final_gr
+
+        #Traffic Effort Peak
+        const_f_peak = highacc_const_t*final_gr/jari_jari*mech_eff
+        v_wp_peak    = highacc_wp/3.6
+        const_p_peak = const_f_peak*v_wp_peak
+
+
+        const_p_peak_real = const_p_peak/(v_runres[1:]/3.6)
+        const_p_peak_real = np.insert(const_p_peak_real,0,const_p_peak_real[0])
+        const_f_peak_real = np.full(shape=len(const_p_peak_real),fill_value=const_f_peak,dtype=np.int)
+
+        const_fp_peak_real = np.concatenate((const_f_peak_real,const_p_peak_real))
+        const_fp_peak_real = np.reshape(const_fp_peak_real,(len(const_p_peak_real),2),order='F')
+
+        vehicle_force_peak       = const_fp_peak_real.min(axis=1)
+        wheel_torque_peak        = vehicle_force_peak*jari_jari
+        motor_torque_peak        = wheel_torque_peak/final_gr/mech_eff
+        motor_cruise_torque_peak = motor_torque_peak*cruise_percentage/100
+
+        #Cruise Info
+        t_cruise                 = s_cruise/v_cruise
+        pt_cruise                = cruise_percentage/100*p_motor
+        self.output_t_cruise.setText(str(round(t_cruise,3)))
+        self.output_pt_cruise.setText(str(round(pt_cruise,3)))
+
         self.RunresVehicle.canvas.ax.clear()
-        # for i in range (0,len(variasi_array)):
         self.RunresVehicle.canvas.ax.plot(v_runres,runres_vehicle)
         self.RunresVehicle.canvas.ax.set_xlabel("Speed (km/h)")
         self.RunresVehicle.canvas.ax.set_ylabel("Force (N)")
@@ -150,6 +224,50 @@ class runres_calc (QMainWindow) :
         self.RunresMotor.canvas.ax.grid()
         self.RunresMotor.canvas.figure.tight_layout()
         self.RunresMotor.canvas.draw()
+
+        self.RunresVehicleForce.canvas.ax.clear()
+        self.RunresVehicleForce.canvas.ax.plot(v_runres,runres_vehicle)
+        self.RunresVehicleForce.canvas.ax.plot(v_runres,vehicle_force)
+        self.RunresVehicleForce.canvas.ax.plot(v_runres,vehicle_force_peak,linestyle='--')
+        self.RunresVehicleForce.canvas.ax.set_xlabel("Speed (km/h)")
+        self.RunresVehicleForce.canvas.ax.set_ylabel("Force (N)")
+        self.RunresVehicleForce.canvas.ax.set_title("Vehicle Running Resistance")
+        self.RunresVehicleForce.canvas.ax.grid()
+        self.RunresVehicleForce.canvas.figure.tight_layout()
+        self.RunresVehicleForce.canvas.draw()
+
+        self.RunresWheelForce.canvas.ax.clear()
+        self.RunresWheelForce.canvas.ax.plot(v_runres,runres_wheel)
+        self.RunresWheelForce.canvas.ax.plot(v_runres,wheel_torque)
+        self.RunresWheelForce.canvas.ax.plot(v_runres,wheel_torque_peak,linestyle='--')
+        self.RunresWheelForce.canvas.ax.set_xlabel("Speed (km/h)")
+        self.RunresWheelForce.canvas.ax.set_ylabel("Torque (Nm)")
+        self.RunresWheelForce.canvas.ax.set_title("Wheel Running Resistance")
+        self.RunresWheelForce.canvas.ax.grid()
+        self.RunresWheelForce.canvas.figure.tight_layout()
+        self.RunresWheelForce.canvas.draw()
+
+        self.RunresMotorForce.canvas.ax.clear()
+        self.RunresMotorForce.canvas.ax.plot(v_runres,runres_motor)
+        self.RunresMotorForce.canvas.ax.plot(v_runres,motor_torque)
+        self.RunresMotorForce.canvas.ax.plot(v_runres,motor_torque_peak,linestyle='--')
+        self.RunresMotorForce.canvas.ax.set_xlabel("Speed (km/h)")
+        self.RunresMotorForce.canvas.ax.set_ylabel("Torque (Nm)")
+        self.RunresMotorForce.canvas.ax.set_title("Motor Running Resistance")
+        self.RunresMotorForce.canvas.ax.grid()
+        self.RunresMotorForce.canvas.figure.tight_layout()
+        self.RunresMotorForce.canvas.draw()
+
+        self.RunresMotorCruise.canvas.ax.clear()
+        self.RunresMotorCruise.canvas.ax.plot(v_runres,runres_motor)
+        self.RunresMotorCruise.canvas.ax.plot(v_runres,motor_torque)
+        self.RunresMotorCruise.canvas.ax.plot(v_runres,motor_cruise_torque)
+        self.RunresMotorCruise.canvas.ax.set_xlabel("Speed (km/h)")
+        self.RunresMotorCruise.canvas.ax.set_ylabel("Torque (Nm)")
+        self.RunresMotorCruise.canvas.ax.set_title("Motor Running Resistance")
+        self.RunresMotorCruise.canvas.ax.grid()
+        self.RunresMotorCruise.canvas.figure.tight_layout()
+        self.RunresMotorCruise.canvas.draw()
 
 app = QApplication([])
 mainwindow = runres_calc()
