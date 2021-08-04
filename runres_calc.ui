@@ -379,7 +379,7 @@ background-color: rgb(255, 255, 127);</string>
      <rect>
       <x>480</x>
       <y>140</y>
-      <width>171</width>
+      <width>174</width>
       <height>411</height>
      </rect>
     </property>
@@ -415,6 +415,18 @@ background-color: rgb(255, 255, 127);</string>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_40">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>40</width>
+           <height>29</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Biryani</family>
@@ -464,13 +476,13 @@ background-color: rgb(255, 255, 127);</string>
         <widget class="QLabel" name="label_41">
          <property name="minimumSize">
           <size>
-           <width>33</width>
+           <width>40</width>
            <height>29</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>33</width>
+           <width>40</width>
            <height>29</height>
           </size>
          </property>
@@ -523,13 +535,13 @@ background-color: rgb(255, 255, 127);</string>
         <widget class="QLabel" name="label_43">
          <property name="minimumSize">
           <size>
-           <width>33</width>
+           <width>40</width>
            <height>29</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>33</width>
+           <width>40</width>
            <height>29</height>
           </size>
          </property>
@@ -587,13 +599,13 @@ background-color: rgb(255, 255, 127);</string>
           <widget class="QLabel" name="label_44">
            <property name="minimumSize">
             <size>
-             <width>33</width>
+             <width>40</width>
              <height>29</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>33</width>
+             <width>40</width>
              <height>29</height>
             </size>
            </property>
@@ -680,13 +692,13 @@ background-color: rgb(255, 255, 127);</string>
           <widget class="QLabel" name="label_45">
            <property name="minimumSize">
             <size>
-             <width>33</width>
+             <width>40</width>
              <height>29</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>33</width>
+             <width>40</width>
              <height>29</height>
             </size>
            </property>
@@ -765,13 +777,13 @@ background-color: rgb(255, 255, 127);</string>
         <widget class="QLabel" name="label_48">
          <property name="minimumSize">
           <size>
-           <width>33</width>
+           <width>40</width>
            <height>29</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>33</width>
+           <width>40</width>
            <height>29</height>
           </size>
          </property>
@@ -814,7 +826,7 @@ background-color: rgb(255, 255, 127);</string>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -824,6 +836,31 @@ background-color: rgb(255, 255, 127);</string>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_15">
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_26">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Mech Eff</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="input_mech_eff">
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="0">
       <widget class="QLabel" name="label_28">
        <property name="font">
@@ -852,7 +889,7 @@ background-color: rgb(255, 255, 127);</string>
        </property>
        <property name="font">
         <font>
-         <family>Biryani</family>
+         <family>MS Shell Dlg 2</family>
         </font>
        </property>
        <property name="frameShape">
@@ -860,105 +897,6 @@ background-color: rgb(255, 255, 127);</string>
        </property>
        <property name="text">
         <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_26">
-       <property name="font">
-        <font>
-         <family>Biryani</family>
-        </font>
-       </property>
-       <property name="text">
-        <string>Mech Eff</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="input_mech_eff">
-       <property name="maximumSize">
-        <size>
-         <width>77</width>
-         <height>24</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>1</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>480</y>
-      <width>191</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <layout class="QFormLayout" name="formLayout_14">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_32">
-       <property name="font">
-        <font>
-         <family>Biryani</family>
-        </font>
-       </property>
-       <property name="text">
-        <string>Gear Box</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="input_gearbox">
-       <property name="minimumSize">
-        <size>
-         <width>77</width>
-         <height>24</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>77</width>
-         <height>24</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>1</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_29">
-       <property name="font">
-        <font>
-         <family>Biryani</family>
-        </font>
-       </property>
-       <property name="text">
-        <string>Axle</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="input_axle">
-       <property name="minimumSize">
-        <size>
-         <width>77</width>
-         <height>24</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>77</width>
-         <height>24</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>5.86</string>
        </property>
       </widget>
      </item>
@@ -1027,7 +965,13 @@ background-color: rgb(255, 255, 127);</string>
        <property name="minimumSize">
         <size>
          <width>71</width>
-         <height>0</height>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
         </size>
        </property>
        <property name="font">
@@ -1061,6 +1005,18 @@ background-color: rgb(255, 255, 127);</string>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_6">
+       <property name="minimumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <family>Biryani</family>
@@ -1128,7 +1084,7 @@ background-color: rgb(255, 255, 127);</string>
       <x>40</x>
       <y>370</y>
       <width>161</width>
-      <height>81</height>
+      <height>71</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_7">
@@ -1634,11 +1590,11 @@ background-color: rgb(255, 255, 127);</string>
        </property>
        <property name="font">
         <font>
-         <family>Biryani</family>
+         <family>MS Shell Dlg 2</family>
         </font>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <property name="text">
         <string/>
@@ -1661,11 +1617,11 @@ background-color: rgb(255, 255, 127);</string>
        </property>
        <property name="font">
         <font>
-         <family>Biryani</family>
+         <family>MS Shell Dlg 2</family>
         </font>
        </property>
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <property name="text">
         <string/>
@@ -1795,7 +1751,7 @@ background-color: rgb(255, 255, 127);</string>
         </font>
        </property>
        <property name="text">
-        <string>a</string>
+        <string>Acceleration</string>
        </property>
       </widget>
      </item>
@@ -1815,7 +1771,7 @@ background-color: rgb(255, 255, 127);</string>
        </property>
        <property name="font">
         <font>
-         <family>Biryani</family>
+         <family>MS Shell Dlg 2</family>
         </font>
        </property>
        <property name="text">
@@ -2038,7 +1994,7 @@ background-color: rgb(255, 255, 127);</string>
        </property>
        <property name="font">
         <font>
-         <family>Biryani</family>
+         <family>MS Shell Dlg 2</family>
         </font>
        </property>
        <property name="text">
@@ -2084,6 +2040,18 @@ background-color: rgb(255, 255, 127);</string>
     <layout class="QFormLayout" name="formLayout_29">
      <item row="0" column="0">
       <widget class="QLabel" name="label_17">
+       <property name="minimumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>71</width>
+         <height>29</height>
+        </size>
+       </property>
        <property name="font">
         <font>
          <family>Biryani</family>
@@ -2110,14 +2078,14 @@ background-color: rgb(255, 255, 127);</string>
        </property>
        <property name="font">
         <font>
-         <family>Biryani</family>
+         <family>MS Shell Dlg 2</family>
         </font>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
        </property>
        <property name="text">
-        <string>                         </string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -2141,8 +2109,82 @@ background-color: rgb(255, 255, 127);</string>
      <string>kg</string>
     </property>
    </widget>
-   <zorder>graphicsView_2</zorder>
+   <widget class="QWidget" name="formLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>480</y>
+      <width>181</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_3">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_32">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Gear Box</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="input_gearbox">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_29">
+       <property name="font">
+        <font>
+         <family>Biryani</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Axle</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="input_axle">
+       <property name="minimumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>77</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>5.86</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
    <zorder>graphicsView</zorder>
+   <zorder>graphicsView_2</zorder>
    <zorder>graphicsView_3</zorder>
    <zorder>label_Judul1</zorder>
    <zorder>label_App1</zorder>
@@ -2161,8 +2203,7 @@ background-color: rgb(255, 255, 127);</string>
    <zorder>label_Subjudul3</zorder>
    <zorder>label_Subjudul4</zorder>
    <zorder>verticalLayoutWidget_5</zorder>
-   <zorder></zorder>
-   <zorder></zorder>
+   <zorder>layoutWidget</zorder>
    <zorder>verticalLayoutWidget</zorder>
    <zorder>formLayoutWidget</zorder>
    <zorder>verticalLayoutWidget_4</zorder>
@@ -2186,6 +2227,7 @@ background-color: rgb(255, 255, 127);</string>
    <zorder>verticalLayoutWidget_10</zorder>
    <zorder>formLayoutWidget_18</zorder>
    <zorder>label_25</zorder>
+   <zorder>formLayoutWidget_4</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

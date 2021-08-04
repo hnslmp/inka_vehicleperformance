@@ -97,6 +97,7 @@ class runres_calc (QMainWindow) :
         ca  = float(self.input_ca.text())
 
         self.output_massa_total.setText(str(round(massa_total,3)))
+        self.output_final_gr.setText(str(round(final_gr,3)))
         self.output_kec_max_rpm.setText(str(round(kec_max_rpm,3)))
         self.output_kec_ops_rpm.setText(str(round(kec_ops_rpm,3)))
         self.output_accel.setText(str(round(accel,3)))
