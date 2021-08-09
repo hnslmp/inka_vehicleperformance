@@ -2,6 +2,7 @@
 # Main program
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
+from PyQt5 import QtGui
 
 import sys
 import csv
@@ -9,6 +10,8 @@ from datetime import datetime
 import os.path
 
 import atexit
+
+import ctypes
 
 # Plotter
 import numpy as np
@@ -18,6 +21,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import ( NavigationToolbar2QT  as  NavigationToolbar )
 from matplotlib.figure import Figure
+
+import logo_rc
 
 # Program Input Window
 from datetime import datetime
@@ -54,6 +59,8 @@ class runres_calc (QMainWindow) :
         QMainWindow.__init__(self)
         loadUi("runres_calc.ui",self)
         self.setWindowTitle("Vehicle Performance Calculator")
+        self.setWindowIcon(QtGui.QIcon('logo.png'))
+        self.showMaximized()
         #App Selection
         self.TombolCalculate.clicked.connect(self.calculate_pressed)
 
@@ -103,13 +110,16 @@ class runres_calc (QMainWindow) :
         g   = float(self.input_g.text())
         ca  = float(self.input_ca.text())
 
-        const_t         = float(self.input_const_t.text())
-        highacc_const_t = float(self.input_highacc_const_t.text())
+
+ 
+        # const_t         = float(self.input_const_t.text())
+        # highacc_const_t = float(self.input_highacc_const_t.text())
         wp              = float(self.input_wp.text())
 
         v_cruise            = float(self.input_v_cruise.text())
         s_cruise            = float(self.input_s_cruise.text())
         cruise_percentage   = float(self.input_cruise_percentage.text())
+        p_auxiliary         = float(self.input_p_auxiliary.text())
 
         self.output_massa_total.setText(str(round(massa_total,3)))
         self.output_final_gr.setText(str(round(final_gr,3)))
@@ -121,10 +131,12 @@ class runres_calc (QMainWindow) :
         #Menghitung Running Resistance
         v_runres = np.arange(0,121,1)
 
-        jumlah_variasi = 5
+        jumlah_variasi = int(self.jumlah_variasi.text())
         variasi_array = np.arange(0,jumlah_variasi+1,1)
         pengali = variasi_array/jumlah_variasi
         gradien = np.full(shape=len(variasi_array),fill_value=theta,dtype=int)*pengali
+
+        print(gradien)
 
         rd = rho/2*af*cd*np.square((v_runres/3.6+vw/3.6))
         rg = massa_total*g*np.sin(np.radians(gradien))
@@ -138,6 +150,23 @@ class runres_calc (QMainWindow) :
         runres_wheel = runres_vehicle * jari_jari
         runres_motor = runres_wheel/final_gr
         
+        # Menghitung Const t
+
+        tractive_effort_n_gradien = massa_total*accel + runres_vehicle
+        tractive_effort_nm_gradien  = tractive_effort_n_gradien*jari_jari
+        tractive_effort_motor_torque_gradien = tractive_effort_nm_gradien/final_gr/mech_eff
+
+        gradien_const_t           = int(self.gradien_const_t.text())
+        kecepatan_const_t         = int(self.kecepatan_const_t.text())
+        gradien_highacc_const_t   = int(self.gradien_highacc_const_t.text())
+        kecepatan_highacc_const_t = int(self.kecepatan_highacc_const_t.text())
+
+        const_t         = tractive_effort_motor_torque_gradien[kecepatan_const_t,gradien_const_t]
+        highacc_const_t = tractive_effort_motor_torque_gradien[kecepatan_highacc_const_t,gradien_highacc_const_t]
+
+        self.output_const_t .setText(str(round(const_t ,3)))
+        self.output_highacc_const_t .setText(str(round(highacc_const_t ,3)))
+
         # Mencari Vehicle Force       
         const_f = const_t*final_gr/jari_jari*gearbox
         v_wp    = wp/3.6
@@ -156,9 +185,11 @@ class runres_calc (QMainWindow) :
         motor_torque        = wheel_torque/final_gr/mech_eff
         motor_cruise_torque = motor_torque*cruise_percentage/100
 
+
+
         vehicle_force_arr = vehicle_force.reshape(vehicle_force.shape[0],-1)
         temp = vehicle_force_arr
-        for i in range (0,5):
+        for i in range (0,jumlah_variasi):
             vehicle_force_arr = np.concatenate((vehicle_force_arr,temp),axis=1)
         # print ( np.concatenate((,vehicle_force),axis=1))
         # print(vehicle_force_arr)
@@ -173,6 +204,13 @@ class runres_calc (QMainWindow) :
         avg_accel_real  = accel_real[:idx,0].mean()
         p_motor         = (const_t*mech_eff*final_gr/jari_jari)*(wp/3.6)/1000
         highacc_wp = 3.6*p_motor*1000*jari_jari/highacc_const_t/final_gr
+
+        self.output_avg_accel.setText(str(round(avg_accel_real ,3)))
+        self.output_p_motor.setText(str(round(p_motor ,3)))
+        self.output_highacc_wp.setText(str(round(highacc_wp ,3)))
+        self.output_grad_const_t.setText(str(round(gradien[gradien_const_t ] ,3)))
+        self.output_grad_highacc_const_t.setText(str(round(gradien[gradien_highacc_const_t ] ,3)))
+        print(gradien[0])
 
         #Traffic Effort Peak
         const_f_peak = highacc_const_t*final_gr/jari_jari*mech_eff
@@ -195,8 +233,15 @@ class runres_calc (QMainWindow) :
         #Cruise Info
         t_cruise                 = s_cruise/v_cruise
         pt_cruise                = cruise_percentage/100*p_motor
+        p_cruise                 = pt_cruise + p_auxiliary
+        e_battery                = t_cruise*p_cruise
+        p_battery                = p_auxiliary + p_motor
+
         self.output_t_cruise.setText(str(round(t_cruise,3)))
         self.output_pt_cruise.setText(str(round(pt_cruise,3)))
+        self.output_p_cruise.setText(str(round(p_cruise,3)))
+        self.output_e_battery.setText(str(round(e_battery,3)))
+        self.output_p_battery.setText(str(round(p_battery,3)))
 
         self.RunresVehicle.canvas.ax.clear()
         self.RunresVehicle.canvas.ax.plot(v_runres,runres_vehicle)
@@ -272,5 +317,6 @@ class runres_calc (QMainWindow) :
 app = QApplication([])
 mainwindow = runres_calc()
 app.setQuitOnLastWindowClosed(True)
-mainwindow.showMaximized()
+myappid = 'mycompany.myproduct.subproduct.version' # arbitrary string
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 sys.exit(app.exec_())
