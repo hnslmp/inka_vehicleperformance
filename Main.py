@@ -249,6 +249,7 @@ class runres_calc (QMainWindow) :
         self.RunresVehicle.canvas.ax.set_ylabel("Force (N)")
         self.RunresVehicle.canvas.ax.set_title("Vehicle Running Resistance")
         self.RunresVehicle.canvas.ax.grid()
+        self.RunresVehicle.canvas.ax.legend()
         self.RunresVehicle.canvas.figure.tight_layout()
         self.RunresVehicle.canvas.draw()
 
@@ -313,6 +314,12 @@ class runres_calc (QMainWindow) :
         self.RunresMotorCruise.canvas.ax.grid()
         self.RunresMotorCruise.canvas.figure.tight_layout()
         self.RunresMotorCruise.canvas.draw()
+
+        fig, ax = plt.subplots()
+        for i in range (0,len(variasi_array)):
+            ax.plot(v_runres, runres_vehicle[:,i]);
+        ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Vehicle Running Resistance');
+        fig.savefig("motorrunres.png")
 
 app = QApplication([])
 mainwindow = runres_calc()
