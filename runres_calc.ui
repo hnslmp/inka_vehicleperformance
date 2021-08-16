@@ -4122,6 +4122,19 @@ background-color: rgb(255, 255, 127);</string>
        <string/>
       </property>
      </widget>
+     <widget class="QPushButton" name="TombolExport">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>890</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export</string>
+      </property>
+     </widget>
      <zorder>label</zorder>
      <zorder>graphicsView_4</zorder>
      <zorder>graphicsView_2</zorder>
@@ -4184,6 +4197,7 @@ background-color: rgb(255, 255, 127);</string>
      <zorder>label_95</zorder>
      <zorder>label_98</zorder>
      <zorder>label_96</zorder>
+     <zorder>TombolExport</zorder>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">

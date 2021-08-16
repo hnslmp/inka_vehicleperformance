@@ -17,6 +17,9 @@ import ctypes
 import numpy as np
 from scipy import constants
 
+#Exporter
+from fpdf import FPDF
+
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import ( NavigationToolbar2QT  as  NavigationToolbar )
@@ -54,6 +57,268 @@ from datetime import datetime
 # s_cruise            = 200
 # cruise_percentage   = 33
 
+class PDF(FPDF):
+    def pdfer(self):
+
+        #Halaman 1
+        self.add_page()
+
+        self.set_xy(10.0,0.0)
+        self.image('logo.png',  link='', type='', w=700/15, h=450/15)
+
+        #Set Warna
+        self.set_text_color(0, 0, 0)\
+        
+        #Judul
+        self.set_xy(0.0,0.0)
+        self.set_font('Arial', 'B', 16)
+        self.cell(w=210.0, h=40.0, align='C', txt="PERFORMANCE REPORT", border=0)
+
+        #Design Summary
+        self.set_xy(10.0,35.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Design Summary", border=0)
+
+        self.set_xy(10.0,45.0)
+        self.set_font('Arial', '', 11)
+        self.cell(w=0.0, h=0.0, align='L', txt="Motor Power =", border=0)
+
+        self.set_xy(10.0,50.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Motor Nom Torque =", border=0)
+
+        self.set_xy(10.0,55.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Motor Peak Torque =", border=0)
+
+        self.set_xy(10.0,60.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Motor RPM =", border=0)
+
+        self.set_xy(100.0,45.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Gradeability =", border=0)
+        
+        self.set_xy(100.0,50.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Battery Power =", border=0)
+
+        self.set_xy(100.0,55.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Battery Energy =", border=0)
+
+        self.set_xy(100.0,60.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Final Gear Ratio =", border=0)
+
+        #Grafik Motor Running Resistance
+        self.set_xy(10.0,70.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Grafik  Motor Running Resistance", border=0)
+
+        self.set_xy(40.0,75.0)
+        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+
+        #Parameter Kendaraan
+        self.set_xy(10.0,170.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Parameter Kendaraan", border=0)
+
+        self.set_xy(10.0,180.0)
+        self.set_font('Arial', '', 11)
+        self.cell(w=0.0, h=0.0, align='L', txt="Lebar Kendaraan =", border=0)
+
+        self.set_xy(10.0,185.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Tinggi Kendaraan =", border=0)
+
+        self.set_xy(10.0,190.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Ca =", border=0)
+
+        self.set_xy(10.0,195.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Af =", border=0)
+
+        self.set_xy(10.0,205.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Kode Ban =", border=0)
+
+        self.set_xy(10.0,210.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Jari - jari Ban =", border=0)
+
+        self.set_xy(100.0,180.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Massa Kosong =", border=0)
+
+        self.set_xy(100.0,185.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Massa Isi =", border=0)
+
+        self.set_xy(100.0,190.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Massa Total =", border=0)
+
+        self.set_xy(100.0,200.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Gear Box =", border=0)
+        
+        self.set_xy(100.0,205.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Axle =", border=0)
+
+        self.set_xy(100.0,210.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Final GR =", border=0)
+
+        self.set_xy(150.0,200.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Mech Eff =", border=0)
+
+        #Dinamika Bergerak
+        self.set_xy(10.0,220.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Dinamika Bergerak", border=0)
+
+        self.set_xy(10.0,230.0)
+        self.set_font('Arial', '', 11)
+        self.cell(w=0.0, h=0.0, align='L', txt="Rolling Resistance =", border=0)
+
+        self.set_xy(10.0,235.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Drag Resistance =", border=0)
+
+        self.set_xy(10.0,240.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Massa Jenis Udara =", border=0)
+
+        self.set_xy(100.0,230.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Kecepatan Angin =", border=0)
+
+        self.set_xy(100.0,235.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Percepatan Gravitasi =", border=0)
+
+        self.set_xy(100.0,240.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Acceleration Margin =", border=0)
+
+        #Halaman 2
+        self.add_page()
+
+        #Vehicle Running Resistance
+        self.set_xy(10.0,10.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Vehicle Running Resistance", border=0)
+
+        self.set_xy(30.0,15.0)
+        self.image('rumus_vehiclerunres.png',  link='', type='', w=150, h=25)
+
+        self.set_xy(40.0,40.0)
+        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+
+        #Wheel Running Resistance
+        self.set_xy(10.0,145.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Wheel Running Resistance", border=0)
+
+        self.set_xy(30.0,150.0)
+        self.image('rumus_wheelrunres.png',  link='', type='',w=150, h=25)
+
+        self.set_xy(40.0,175.0)
+        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+
+        #Halaman 3
+        self.add_page()
+
+        #Motor Running Resistance
+        self.set_xy(10.0,10.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Motor Side Running Resistance", border=0)
+
+        self.set_xy(30.0,15.0)
+        self.image('rumus_motorrunres.png',  link='', type='', w=150, h=25)
+
+        self.set_xy(40.0,40.0)
+        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+
+        #Kebutuhan Power
+        self.set_xy(10.0,150.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Kebutuhan Power", border=0)
+
+        self.set_xy(30.0,155.0)
+        self.image('rumus_kebutuhangaya.png',  link='', type='', w=150, h=30)
+
+        self.set_xy(10.0,190.0)
+        self.set_font('Arial', '', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Const T =", border=0)
+
+        self.set_xy(10.0,195.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="High Acc Const T =", border=0)
+
+        self.set_xy(10.0,200.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Weakening Point =", border=0)
+
+        self.set_xy(100.0,190.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Avg Acc =", border=0)
+
+        self.set_xy(100.0,195.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="P Motor =", border=0)
+
+        self.set_xy(100.0,200.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="High Acc Weakening Point =", border=0)
+
+        #Halaman 4
+        self.add_page()
+
+        #Vehicle Force Running Resistance
+        self.set_xy(10.0,10.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Vehicle Force Running Resistance", border=0)
+
+        self.set_xy(40.0,20.0)
+        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+
+        #Wheel Force Running Resistance
+        self.set_xy(10.0,120.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Vehicle Force Running Resistance", border=0)
+
+        self.set_xy(40.0,130.0)
+        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+
+        #Halaman 5
+        self.add_page()
+
+        #Motor Force Running Resistance
+        self.set_xy(10.0,10.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Motor Force Running Resistance", border=0)
+
+        self.set_xy(40.0,20.0)
+        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+        
+        #Kebutuhan Energi
+        self.set_xy(10.0,120.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Kebutuhan Energi", border=0)
+
+        self.set_xy(10.0,130.0)
+        self.set_font('Arial', '', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="V Cruise =", border=0)
+
+        self.set_xy(10.0,135.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="S Cruise =", border=0)
+
+        self.set_xy(10.0,140.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="t Cruise =", border=0)
+
+        self.set_xy(10.0,145.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="% Cruise =", border=0)
+
+        self.set_xy(80.0,130.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Pt Cruise =", border=0)
+
+        self.set_xy(80.0,135.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="P Aux =", border=0)
+
+        self.set_xy(80.0,140.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="P Cruise =", border=0)
+
+        self.set_xy(150.0,130.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="E Battery =", border=0)
+
+        self.set_xy(150.0,135.0)
+        self.cell(w=0.0, h=0.0, align='L', txt="P Battery =", border=0)
+
+        #Grafik Motor Cruise Running Resistance
+        self.set_xy(10.0,155.0)
+        self.set_font('Arial', 'B', 12)
+        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Motor Cruise Running Resistance", border=0)
+
+        self.set_xy(40.0,165.0)
+        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+
+
 class runres_calc (QMainWindow) :
     def __init__(self):
         QMainWindow.__init__(self)
@@ -63,6 +328,7 @@ class runres_calc (QMainWindow) :
         self.showMaximized()
         #App Selection
         self.TombolCalculate.clicked.connect(self.calculate_pressed)
+        self.TombolExport.clicked.connect(self.export_pressed)
 
     def calculate_pressed(self):
         #Parameter Kendaraan
@@ -320,6 +586,14 @@ class runres_calc (QMainWindow) :
             ax.plot(v_runres, runres_vehicle[:,i]);
         ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Vehicle Running Resistance');
         fig.savefig("motorrunres.png")
+
+    def export_pressed(self):
+        pdf = PDF(orientation='P', unit='mm', format='A4')
+        pdf.pdfer()
+        pdf.output('report.pdf','F')
+
+        
+
 
 app = QApplication([])
 mainwindow = runres_calc()
