@@ -583,9 +583,40 @@ class runres_calc (QMainWindow) :
 
         fig, ax = plt.subplots()
         for i in range (0,len(variasi_array)):
-            ax.plot(v_runres, runres_vehicle[:,i]);
+            ax.plot(v_runres, runres_vehicle[:,i],label = "Runres " + str(gradien[i])+ "'");
         ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Vehicle Running Resistance');
-        fig.savefig("motorrunres.png")
+        ax.legend(loc="upper left")
+        fig.savefig("plot_vehiclerunres.png")
+        
+
+        fig, ax = plt.subplots()
+        for i in range (0,len(variasi_array)):
+            ax.plot(v_runres, runres_wheel[:,i],label = "Runres " + str(gradien[i])+ "'");
+        ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Wheel Running Resistance');
+        ax.legend(loc="upper left")
+        fig.savefig("plot_wheelrunres.png")
+
+        fig, ax = plt.subplots()
+        for i in range (0,len(variasi_array)):
+            ax.plot(v_runres, runres_motor[:,i],label = "Runres " + str(gradien[i])+ "'");
+        ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Motor Running Resistance');
+        ax.legend(loc="upper left")
+        fig.savefig("plot_motorrunres.png")
+
+        fig = plt.figure("Line Plot")
+        legendFig = plt.figure("Legend plot")
+        ax = fig.add_subplot(111)
+        for i in range (0,len(variasi_array)):
+            line1, = ax.plot(v_runres, runres_vehicle[:,i],label = "Runres " + str(gradien[i]) + "'");
+        line2, = ax.plot(v_runres, vehicle_force,label = "Vehicle Force (N)")
+        line3, = ax.plot(v_runres, vehicle_force_peak,linestyle='--',label = "Vehicle Force Peak (N)")
+        legendFig.legend([line1,line2,line3], loc='center')
+        
+        # ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Vehicle Running Resistance');
+        # ax.legend(bbox_to_anchor=[1.17, 1.15], loc='upper right')
+        # fig.legend([line1], ['series1'], bbox_to_anchor=[0.5, 0.5], loc='center left')
+        fig.savefig("plot_vehicleforce.png")
+
 
     def export_pressed(self):
         pdf = PDF(orientation='P', unit='mm', format='A4')

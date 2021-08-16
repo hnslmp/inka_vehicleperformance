@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1652</width>
+    <width>1698</width>
     <height>1005</height>
    </rect>
   </property>
@@ -31,7 +31,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1631</width>
+      <width>1681</width>
       <height>1080</height>
      </rect>
     </property>
@@ -48,7 +48,7 @@
      </size>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -2209,7 +2209,7 @@ background-color: rgb(255, 255, 127);</string>
         <x>720</x>
         <y>520</y>
         <width>251</width>
-        <height>331</height>
+        <height>344</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_4">
@@ -3188,7 +3188,7 @@ background-color: rgb(255, 255, 127);</string>
         <x>1030</x>
         <y>140</y>
         <width>251</width>
-        <height>175</height>
+        <height>183</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_8">
@@ -3454,8 +3454,8 @@ background-color: rgb(255, 255, 127);</string>
        <rect>
         <x>980</x>
         <y>250</y>
-        <width>121</width>
-        <height>175</height>
+        <width>123</width>
+        <height>183</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_9">
@@ -3586,8 +3586,8 @@ background-color: rgb(255, 255, 127);</string>
        <rect>
         <x>1270</x>
         <y>140</y>
-        <width>121</width>
-        <height>175</height>
+        <width>123</width>
+        <height>183</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_11">
@@ -3718,8 +3718,8 @@ background-color: rgb(255, 255, 127);</string>
        <rect>
         <x>930</x>
         <y>520</y>
-        <width>121</width>
-        <height>331</height>
+        <width>123</width>
+        <height>335</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout_12">
@@ -4317,6 +4317,16 @@ background-color: rgb(255, 255, 127);</string>
        <string/>
       </property>
      </widget>
+     <widget class="Legend" name="Legend" native="true">
+      <property name="geometry">
+       <rect>
+        <x>1160</x>
+        <y>230</y>
+        <width>481</width>
+        <height>401</height>
+       </rect>
+      </property>
+     </widget>
      <zorder>label_2</zorder>
      <zorder>RunresVehicleForce</zorder>
      <zorder>RunresWheelForce</zorder>
@@ -4326,6 +4336,7 @@ background-color: rgb(255, 255, 127);</string>
      <zorder>RunresMotor</zorder>
      <zorder>label_App2_2</zorder>
      <zorder>label_App1_2</zorder>
+     <zorder>Legend</zorder>
     </widget>
    </widget>
   </widget>
@@ -4334,8 +4345,8 @@ background-color: rgb(255, 255, 127);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1652</width>
-     <height>26</height>
+     <width>1698</width>
+     <height>31</height>
     </rect>
    </property>
   </widget>
@@ -4382,6 +4393,12 @@ background-color: rgb(255, 255, 127);</string>
    <class>RunresMotorCruise</class>
    <extends>QWidget</extends>
    <header>runresmotorcruise.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Legend</class>
+   <extends>QWidget</extends>
+   <header>legend.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
