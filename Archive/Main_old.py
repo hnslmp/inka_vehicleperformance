@@ -332,7 +332,7 @@ class PDF(FPDF):
 class runres_calc (QMainWindow) :
     def __init__(self):
         QMainWindow.__init__(self)
-        loadUi("runres_calc2.ui",self)
+        loadUi("runres_calc.ui",self)
         self.setWindowTitle("Vehicle Performance Calculator")
         self.setWindowIcon(QtGui.QIcon('logo.png'))
         self.showMaximized()
@@ -602,7 +602,7 @@ class runres_calc (QMainWindow) :
         self.RunresMotorCruise.canvas.ax.set_ylabel("Torque (Nm)")
         self.RunresMotorCruise.canvas.ax.set_title("Motor Running Resistance",loc='left')
         self.RunresMotorCruise.canvas.ax.grid()
-        self.RunresMotorCruise.canvas.ax.legend(bbox_to_anchor=[1.05, 1.1], loc='upper left',fontsize='xx-small')
+        self.RunresMotorCruise.canvas.ax.legend(bbox_to_anchor=[1.05, 1.1], loc='upper right',fontsize='xx-small')
         self.RunresMotorCruise.canvas.figure.tight_layout()
         self.RunresMotorCruise.canvas.draw()
 
