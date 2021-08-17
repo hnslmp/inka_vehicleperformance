@@ -510,74 +510,87 @@ class runres_calc (QMainWindow) :
         self.output_p_battery.setText(str(round(p_battery,3)))
 
         self.RunresVehicle.canvas.ax.clear()
-        self.RunresVehicle.canvas.ax.plot(v_runres,runres_vehicle)
+        for i in range (0,len(variasi_array)):
+            self.RunresVehicle.canvas.ax.plot(v_runres,runres_vehicle[:,i],label = "Runres " + str(gradien[i])+ "'")
         self.RunresVehicle.canvas.ax.set_xlabel("Speed (km/h)")
         self.RunresVehicle.canvas.ax.set_ylabel("Force (N)")
-        self.RunresVehicle.canvas.ax.set_title("Vehicle Running Resistance")
+        self.RunresVehicle.canvas.ax.set_title("Vehicle Running Resistance",loc='left')
+        self.RunresVehicle.canvas.ax.legend(bbox_to_anchor=[1.05, 1.1], loc='upper right',fontsize='xx-small')
         self.RunresVehicle.canvas.ax.grid()
-        self.RunresVehicle.canvas.ax.legend()
         self.RunresVehicle.canvas.figure.tight_layout()
         self.RunresVehicle.canvas.draw()
 
         self.RunresWheel.canvas.ax.clear()
-        self.RunresWheel.canvas.ax.plot(v_runres,runres_wheel)
+        for i in range (0,len(variasi_array)):
+            self.RunresWheel.canvas.ax.plot(v_runres,runres_wheel[:,i],label = "Runres " + str(gradien[i])+ "'")
         self.RunresWheel.canvas.ax.set_xlabel("Speed (km/h)")
         self.RunresWheel.canvas.ax.set_ylabel("Torque (Nm)")
-        self.RunresWheel.canvas.ax.set_title("Wheel Running Resistance")
+        self.RunresWheel.canvas.ax.set_title("Wheel Running Resistance",loc='left')
+        self.RunresWheel.canvas.ax.legend(bbox_to_anchor=[1.05, 1.1], loc='upper right',fontsize='xx-small')
         self.RunresWheel.canvas.ax.grid()
         self.RunresWheel.canvas.figure.tight_layout()
         self.RunresWheel.canvas.draw()
 
         self.RunresMotor.canvas.ax.clear()
-        self.RunresMotor.canvas.ax.plot(v_runres,runres_motor)
+        for i in range (0,len(variasi_array)):
+            self.RunresMotor.canvas.ax.plot(v_runres,runres_motor[:,i],label = "Runres " + str(gradien[i])+ "'")
         self.RunresMotor.canvas.ax.set_xlabel("Speed (km/h)")
         self.RunresMotor.canvas.ax.set_ylabel("Torque (Nm)")
-        self.RunresMotor.canvas.ax.set_title("Motor Running Resistance")
+        self.RunresMotor.canvas.ax.set_title("Motor Running Resistance",loc='left')
+        self.RunresMotor.canvas.ax.legend(bbox_to_anchor=[1.05, 1.1], loc='upper right',fontsize='xx-small')
         self.RunresMotor.canvas.ax.grid()
         self.RunresMotor.canvas.figure.tight_layout()
         self.RunresMotor.canvas.draw()
 
         self.RunresVehicleForce.canvas.ax.clear()
-        self.RunresVehicleForce.canvas.ax.plot(v_runres,runres_vehicle)
-        self.RunresVehicleForce.canvas.ax.plot(v_runres,vehicle_force)
-        self.RunresVehicleForce.canvas.ax.plot(v_runres,vehicle_force_peak,linestyle='--')
+        for i in range (0,len(variasi_array)):
+            self.RunresVehicleForce.canvas.ax.plot(v_runres,runres_vehicle[:,i],label = "Runres " + str(gradien[i])+ "'")
+        self.RunresVehicleForce.canvas.ax.plot(v_runres,vehicle_force,label="Force")
+        self.RunresVehicleForce.canvas.ax.plot(v_runres,vehicle_force_peak,linestyle='--',label="Force Peak")
         self.RunresVehicleForce.canvas.ax.set_xlabel("Speed (km/h)")
         self.RunresVehicleForce.canvas.ax.set_ylabel("Force (N)")
-        self.RunresVehicleForce.canvas.ax.set_title("Vehicle Running Resistance")
+        self.RunresVehicleForce.canvas.ax.set_title("Vehicle Running Resistance",loc='left')
+        self.RunresVehicleForce.canvas.ax.legend(bbox_to_anchor=[1.05, 1.1], loc='upper right',fontsize='xx-small')
         self.RunresVehicleForce.canvas.ax.grid()
         self.RunresVehicleForce.canvas.figure.tight_layout()
         self.RunresVehicleForce.canvas.draw()
 
         self.RunresWheelForce.canvas.ax.clear()
-        self.RunresWheelForce.canvas.ax.plot(v_runres,runres_wheel)
-        self.RunresWheelForce.canvas.ax.plot(v_runres,wheel_torque)
-        self.RunresWheelForce.canvas.ax.plot(v_runres,wheel_torque_peak,linestyle='--')
+        for i in range (0,len(variasi_array)):
+            self.RunresWheelForce.canvas.ax.plot(v_runres,runres_wheel[:,i],label = "Runres " + str(gradien[i])+ "'")
+        self.RunresWheelForce.canvas.ax.plot(v_runres,wheel_torque,label="Torque")
+        self.RunresWheelForce.canvas.ax.plot(v_runres,wheel_torque_peak,linestyle='--',label="Torque Peak")
         self.RunresWheelForce.canvas.ax.set_xlabel("Speed (km/h)")
         self.RunresWheelForce.canvas.ax.set_ylabel("Torque (Nm)")
-        self.RunresWheelForce.canvas.ax.set_title("Wheel Running Resistance")
+        self.RunresWheelForce.canvas.ax.set_title("Wheel Running Resistance",loc='left')
+        self.RunresWheelForce.canvas.ax.legend(bbox_to_anchor=[1.05, 1.1], loc='upper right',fontsize='xx-small')
         self.RunresWheelForce.canvas.ax.grid()
         self.RunresWheelForce.canvas.figure.tight_layout()
         self.RunresWheelForce.canvas.draw()
 
         self.RunresMotorForce.canvas.ax.clear()
-        self.RunresMotorForce.canvas.ax.plot(v_runres,runres_motor)
-        self.RunresMotorForce.canvas.ax.plot(v_runres,motor_torque)
-        self.RunresMotorForce.canvas.ax.plot(v_runres,motor_torque_peak,linestyle='--')
+        for i in range (0,len(variasi_array)):
+            self.RunresMotorForce.canvas.ax.plot(v_runres,runres_motor[:,i],label = "Runres " + str(gradien[i])+ "'")
+        self.RunresMotorForce.canvas.ax.plot(v_runres,motor_torque,label="Torque")
+        self.RunresMotorForce.canvas.ax.plot(v_runres,motor_torque_peak,linestyle='--',label="Torque Peak")
         self.RunresMotorForce.canvas.ax.set_xlabel("Speed (km/h)")
         self.RunresMotorForce.canvas.ax.set_ylabel("Torque (Nm)")
-        self.RunresMotorForce.canvas.ax.set_title("Motor Running Resistance")
+        self.RunresMotorForce.canvas.ax.set_title("Motor Running Resistance",loc='left')
+        self.RunresMotorForce.canvas.ax.legend(bbox_to_anchor=[1.05, 1.1], loc='upper right',fontsize='xx-small')
         self.RunresMotorForce.canvas.ax.grid()
         self.RunresMotorForce.canvas.figure.tight_layout()
         self.RunresMotorForce.canvas.draw()
 
         self.RunresMotorCruise.canvas.ax.clear()
-        self.RunresMotorCruise.canvas.ax.plot(v_runres,runres_motor)
-        self.RunresMotorCruise.canvas.ax.plot(v_runres,motor_torque)
-        self.RunresMotorCruise.canvas.ax.plot(v_runres,motor_cruise_torque)
+        for i in range (0,len(variasi_array)):
+            self.RunresMotorCruise.canvas.ax.plot(v_runres, runres_motor[:,i],label = "Runres " + str(gradien[i])+ "'");
+        self.RunresMotorCruise.canvas.ax.plot(v_runres,motor_torque,label="Torque")
+        self.RunresMotorCruise.canvas.ax.plot(v_runres,motor_cruise_torque,label="Cruise Torque")
         self.RunresMotorCruise.canvas.ax.set_xlabel("Speed (km/h)")
         self.RunresMotorCruise.canvas.ax.set_ylabel("Torque (Nm)")
-        self.RunresMotorCruise.canvas.ax.set_title("Motor Running Resistance")
+        self.RunresMotorCruise.canvas.ax.set_title("Motor Running Resistance",loc='left')
         self.RunresMotorCruise.canvas.ax.grid()
+        self.RunresMotorCruise.canvas.ax.legend(bbox_to_anchor=[1.05, 1.1], loc='upper right',fontsize='xx-small')
         self.RunresMotorCruise.canvas.figure.tight_layout()
         self.RunresMotorCruise.canvas.draw()
 
@@ -585,46 +598,65 @@ class runres_calc (QMainWindow) :
         for i in range (0,len(variasi_array)):
             ax.plot(v_runres, runres_vehicle[:,i],label = "Runres " + str(gradien[i])+ "'");
         ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Vehicle Running Resistance');
-        ax.legend(loc="upper left")
+        ax.legend(bbox_to_anchor=[1.1, 1.1], loc='upper right',fontsize='xx-small')
         fig.savefig("plot_vehiclerunres.png")
         
-
         fig, ax = plt.subplots()
         for i in range (0,len(variasi_array)):
             ax.plot(v_runres, runres_wheel[:,i],label = "Runres " + str(gradien[i])+ "'");
-        ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Wheel Running Resistance');
-        ax.legend(loc="upper left")
+        ax.set(xlabel='Speed (km/h)', ylabel='Torque (Nm)', title='Wheel Running Resistance');
+        ax.legend(bbox_to_anchor=[1.1, 1.1], loc='upper right',fontsize='xx-small')
         fig.savefig("plot_wheelrunres.png")
 
         fig, ax = plt.subplots()
         for i in range (0,len(variasi_array)):
             ax.plot(v_runres, runres_motor[:,i],label = "Runres " + str(gradien[i])+ "'");
-        ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Motor Running Resistance');
-        ax.legend(loc="upper left")
+        ax.set(xlabel='Speed (km/h)', ylabel='Torque (Nm)', title='Motor Running Resistance');
+        ax.legend(bbox_to_anchor=[1.1, 1.1], loc='upper right',fontsize='xx-small')
         fig.savefig("plot_motorrunres.png")
+
+        fig, ax = plt.subplots()
+        for i in range (0,len(variasi_array)):
+            ax.plot(v_runres, runres_vehicle[:,i],label = "Runres " + str(gradien[i])+ "'");
+        ax.plot(v_runres,vehicle_force,label = "Force")
+        ax.plot(v_runres,vehicle_force_peak,linestyle='--', label = "Force Peak")
+        ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Vehicle Running Resistance');
+        ax.legend(bbox_to_anchor=[1.1, 1.1], loc='upper right',fontsize='xx-small')
+        fig.savefig("plot_vehicleforce.png")
+
+        fig, ax = plt.subplots()
+        for i in range (0,len(variasi_array)):
+            ax.plot(v_runres, runres_wheel[:,i],label = "Runres " + str(gradien[i])+ "'");
+        ax.plot(v_runres,wheel_torque,label = "Torque")
+        ax.plot(v_runres,wheel_torque_peak,linestyle='--', label = "Torque Peak")
+        ax.set(xlabel='Speed (km/h)', ylabel='Torque (Nm)', title='Wheel Running Resistance');
+        ax.legend(bbox_to_anchor=[1.1, 1.1], loc='upper right',fontsize='xx-small')
+        fig.savefig("plot_wheeltorque.png")
+
+        fig, ax = plt.subplots()
+        for i in range (0,len(variasi_array)):
+            ax.plot(v_runres, runres_motor[:,i],label = "Runres " + str(gradien[i])+ "'");
+        ax.plot(v_runres,motor_torque,label = "Torque")
+        ax.plot(v_runres,motor_torque_peak,linestyle='--', label = "Torque Peak")
+        ax.set(xlabel='Speed (km/h)', ylabel='Torque (Nm)', title='Motor Running Resistance');
+        ax.legend(bbox_to_anchor=[1.1, 1.1], loc='upper right',fontsize='xx-small')
+        fig.savefig("plot_motortorque.png")
 
         fig = plt.figure("Line Plot")
         legendFig = plt.figure("Legend plot")
-        ax = fig.add_subplot(111)
+        fig, ax = plt.subplots()
         for i in range (0,len(variasi_array)):
-            line1, = ax.plot(v_runres, runres_vehicle[:,i],label = "Runres " + str(gradien[i]) + "'");
-        line2, = ax.plot(v_runres, vehicle_force,label = "Vehicle Force (N)")
-        line3, = ax.plot(v_runres, vehicle_force_peak,linestyle='--',label = "Vehicle Force Peak (N)")
-        legendFig.legend([line1,line2,line3], loc='center')
-        
-        # ax.set(xlabel='Speed (km/h)', ylabel='Force (N)', title='Vehicle Running Resistance');
-        # ax.legend(bbox_to_anchor=[1.17, 1.15], loc='upper right')
-        # fig.legend([line1], ['series1'], bbox_to_anchor=[0.5, 0.5], loc='center left')
-        fig.savefig("plot_vehicleforce.png")
-
+           ax.plot(v_runres, runres_vehicle[:,i],label = "Runres " + str(gradien[i]) + "'");
+        ax.plot(v_runres, vehicle_force,label = "Vehicle Force (N)")
+        ax.plot(v_runres, vehicle_force_peak,linestyle='--',label = "Vehicle Force Peak (N)")
+        handles, labels = ax.get_legend_handles_labels()
+        legendFig.legend(handles, labels)
+        legendFig.savefig('legend.png')
 
     def export_pressed(self):
         pdf = PDF(orientation='P', unit='mm', format='A4')
         pdf.pdfer()
         pdf.output('report.pdf','F')
-
-        
-
 
 app = QApplication([])
 mainwindow = runres_calc()

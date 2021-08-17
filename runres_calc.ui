@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1698</width>
+    <width>1644</width>
     <height>1005</height>
    </rect>
   </property>
@@ -31,7 +31,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1681</width>
+      <width>1611</width>
       <height>1080</height>
      </rect>
     </property>
@@ -4208,7 +4208,7 @@ background-color: rgb(255, 255, 127);</string>
        <rect>
         <x>20</x>
         <y>510</y>
-        <width>481</width>
+        <width>511</width>
         <height>401</height>
        </rect>
       </property>
@@ -4216,9 +4216,9 @@ background-color: rgb(255, 255, 127);</string>
      <widget class="RunresWheelForce" name="RunresWheelForce" native="true">
       <property name="geometry">
        <rect>
-        <x>1020</x>
+        <x>1080</x>
         <y>510</y>
-        <width>481</width>
+        <width>511</width>
         <height>401</height>
        </rect>
       </property>
@@ -4226,9 +4226,9 @@ background-color: rgb(255, 255, 127);</string>
      <widget class="RunresMotorForce" name="RunresMotorForce" native="true">
       <property name="geometry">
        <rect>
-        <x>520</x>
+        <x>550</x>
         <y>510</y>
-        <width>481</width>
+        <width>511</width>
         <height>401</height>
        </rect>
       </property>
@@ -4238,7 +4238,7 @@ background-color: rgb(255, 255, 127);</string>
        <rect>
         <x>20</x>
         <y>90</y>
-        <width>481</width>
+        <width>511</width>
         <height>401</height>
        </rect>
       </property>
@@ -4246,9 +4246,9 @@ background-color: rgb(255, 255, 127);</string>
      <widget class="RunresWheel" name="RunresWheel" native="true">
       <property name="geometry">
        <rect>
-        <x>1020</x>
+        <x>1080</x>
         <y>90</y>
-        <width>481</width>
+        <width>511</width>
         <height>401</height>
        </rect>
       </property>
@@ -4256,9 +4256,9 @@ background-color: rgb(255, 255, 127);</string>
      <widget class="RunresMotor" name="RunresMotor" native="true">
       <property name="geometry">
        <rect>
-        <x>520</x>
+        <x>550</x>
         <y>90</y>
-        <width>481</width>
+        <width>511</width>
         <height>401</height>
        </rect>
       </property>
@@ -4317,16 +4317,6 @@ background-color: rgb(255, 255, 127);</string>
        <string/>
       </property>
      </widget>
-     <widget class="Legend" name="Legend" native="true">
-      <property name="geometry">
-       <rect>
-        <x>1160</x>
-        <y>230</y>
-        <width>481</width>
-        <height>401</height>
-       </rect>
-      </property>
-     </widget>
      <zorder>label_2</zorder>
      <zorder>RunresVehicleForce</zorder>
      <zorder>RunresWheelForce</zorder>
@@ -4336,7 +4326,6 @@ background-color: rgb(255, 255, 127);</string>
      <zorder>RunresMotor</zorder>
      <zorder>label_App2_2</zorder>
      <zorder>label_App1_2</zorder>
-     <zorder>Legend</zorder>
     </widget>
    </widget>
   </widget>
@@ -4345,7 +4334,7 @@ background-color: rgb(255, 255, 127);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1698</width>
+     <width>1644</width>
      <height>31</height>
     </rect>
    </property>
@@ -4393,12 +4382,6 @@ background-color: rgb(255, 255, 127);</string>
    <class>RunresMotorCruise</class>
    <extends>QWidget</extends>
    <header>runresmotorcruise.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Legend</class>
-   <extends>QWidget</extends>
-   <header>legend.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
