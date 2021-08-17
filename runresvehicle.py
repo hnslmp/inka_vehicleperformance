@@ -22,6 +22,6 @@ class RunresVehicle (QWidget):
         self.canvas.ax.clear()
         self.canvas.figure.tight_layout()
         self.setLayout(vertical_layout)
-        self.canvas.ax.set_title("Vehicle Running Resistance")
+        self.canvas.ax.set_title("Vehicle Running Resistance",loc='left')
         self.canvas.figure.tight_layout()
         self.canvas.draw()

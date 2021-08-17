@@ -30,32 +30,42 @@ import logo_rc
 # Program Input Window
 from datetime import datetime
 
-# lebar   = 0.0
-# tinggi  = 0.0
-# ca      = 0.0
-# af      = 0.0
-# kode    = 'string'
-# jari_jari   = 0.0
-# massa_kosong    = 0.0
-# massa_kosong    = 0.0
-# axle            = 0.0
-# mech_eff        = 0.0
-# kec_max_kmh = 0.0
-# kec_operasi_kmh = 0.0
-# t_ramp = 0.0
-# theta = 0.0
-# crr = 0.0
-# cd = 0.0
-# rho = 0.0
-# g = 0.0
-# ca = 0.0
-# const_t         = 908.19
-# highacc_const_t = 1251.89
-# wp              = 35
-
-# v_cruise            = 60
-# s_cruise            = 200
-# cruise_percentage   = 33
+p_motor = 0.0
+final_gr = 0.0
+e_battery = 0.0
+p_battery = 0.0
+highacc_const_t = 0.0
+const_t = 0.0
+kec_max_rpm = 0.0
+theta_percentage = 0.0
+lebar = 0.0
+tinggi = 0.0
+ca = 0.0
+af = 0.0
+kode = ""
+jari_jari = 0.0
+massa_kosong = 0.0
+massa_isi = 0.0
+massa_total = 0.0
+gearbox = 0.0
+axle = 0.0
+mech_eff = 0.0
+crr = 0.0
+cd = 0.0
+rho = 0.0
+vw = 0.0
+g = 0.0
+ca = 0.0
+v_cruise = 0.0
+s_cruise = 0.0
+cruise_percentage = 0.0
+p_auxiliary = 0.0
+t_cruise = 0.0
+pt_cruise = 0.0
+p_cruise = 0.0
+wp = 0.0
+avg_accel_real = 0.0
+highacc_wp = 0.0
 
 class PDF(FPDF):
     def pdfer(self):
@@ -81,28 +91,28 @@ class PDF(FPDF):
 
         self.set_xy(10.0,45.0)
         self.set_font('Arial', '', 11)
-        self.cell(w=0.0, h=0.0, align='L', txt="Motor Power =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Motor Power = " + str(round(p_motor,3)) , border=0)
 
         self.set_xy(10.0,50.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Motor Nom Torque =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Motor Nom Torque =" + str(round(const_t,3)), border=0)
 
         self.set_xy(10.0,55.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Motor Peak Torque =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Motor Peak Torque =" + str(round(highacc_const_t,3)), border=0)
 
         self.set_xy(10.0,60.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Motor RPM =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Motor RPM =" + str(round(kec_max_rpm,3)), border=0)
 
         self.set_xy(100.0,45.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Gradeability =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Gradeability =" + str(round(theta_percentage,3)), border=0)
         
         self.set_xy(100.0,50.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Battery Power =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Battery Power = " + str(round(p_battery,3)), border=0)
 
         self.set_xy(100.0,55.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Battery Energy =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Battery Energy = " + str(round(e_battery,3)), border=0)
 
         self.set_xy(100.0,60.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Final Gear Ratio =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Final Gear Ratio = " + str(round(final_gr,3)), border=0)
 
         #Grafik Motor Running Resistance
         self.set_xy(10.0,70.0)
@@ -110,7 +120,7 @@ class PDF(FPDF):
         self.cell(w=0.0, h=0.0, align='L', txt="Grafik  Motor Running Resistance", border=0)
 
         self.set_xy(40.0,75.0)
-        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+        self.image('plot_motorrunres.png',  link='', type='', w=700/5, h=450/5)
 
         #Parameter Kendaraan
         self.set_xy(10.0,170.0)
@@ -119,43 +129,43 @@ class PDF(FPDF):
 
         self.set_xy(10.0,180.0)
         self.set_font('Arial', '', 11)
-        self.cell(w=0.0, h=0.0, align='L', txt="Lebar Kendaraan =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Lebar Kendaraan = " + str(round(lebar,3)), border=0)
 
         self.set_xy(10.0,185.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Tinggi Kendaraan =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Tinggi Kendaraan = " + str(round(tinggi,3)), border=0)
 
         self.set_xy(10.0,190.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Ca =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Ca = " + str(round(ca,3)), border=0)
 
         self.set_xy(10.0,195.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Af =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Af = " + str(round(af,3)), border=0)
 
         self.set_xy(10.0,205.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Kode Ban =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Kode Ban = " + kode, border=0)
 
         self.set_xy(10.0,210.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Jari - jari Ban =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Jari - jari Ban = " + str(round(jari_jari,3)), border=0)
 
         self.set_xy(100.0,180.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Massa Kosong =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Massa Kosong = " + str(round(massa_kosong,3)), border=0)
 
         self.set_xy(100.0,185.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Massa Isi =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Massa Isi = " + str(round(massa_isi,3)), border=0)
 
         self.set_xy(100.0,190.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Massa Total =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Massa Total = " + str(round(massa_total,3)), border=0)
 
         self.set_xy(100.0,200.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Gear Box =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Gear Box = " + str(round(gearbox,3)), border=0)
         
         self.set_xy(100.0,205.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Axle =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Axle = " + str(round(axle,3)), border=0)
 
         self.set_xy(100.0,210.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Final GR =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Final GR = " + str(round(final_gr,3)), border=0)
 
         self.set_xy(150.0,200.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Mech Eff =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Mech Eff = " + str(round(mech_eff,3)), border=0)
 
         #Dinamika Bergerak
         self.set_xy(10.0,220.0)
@@ -164,22 +174,22 @@ class PDF(FPDF):
 
         self.set_xy(10.0,230.0)
         self.set_font('Arial', '', 11)
-        self.cell(w=0.0, h=0.0, align='L', txt="Rolling Resistance =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Rolling Resistance = " + str(round(crr,3)), border=0)
 
         self.set_xy(10.0,235.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Drag Resistance =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Drag Resistance = " + str(round(cd,3)), border=0)
 
         self.set_xy(10.0,240.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Massa Jenis Udara =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Massa Jenis Udara = " + str(round(rho,3)), border=0)
 
         self.set_xy(100.0,230.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Kecepatan Angin =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Kecepatan Angin = " + str(round(ca,3)), border=0)
 
         self.set_xy(100.0,235.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Percepatan Gravitasi =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Percepatan Gravitasi = " + str(round(g,3)), border=0)
 
         self.set_xy(100.0,240.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Acceleration Margin =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Acceleration Margin = " + str(round(ca,3)), border=0)
 
         #Halaman 2
         self.add_page()
@@ -193,7 +203,7 @@ class PDF(FPDF):
         self.image('rumus_vehiclerunres.png',  link='', type='', w=150, h=25)
 
         self.set_xy(40.0,40.0)
-        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+        self.image('plot_vehiclerunres.png',  link='', type='', w=700/5, h=450/5)
 
         #Wheel Running Resistance
         self.set_xy(10.0,145.0)
@@ -204,7 +214,7 @@ class PDF(FPDF):
         self.image('rumus_wheelrunres.png',  link='', type='',w=150, h=25)
 
         self.set_xy(40.0,175.0)
-        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+        self.image('plot_wheelrunres.png',  link='', type='', w=700/5, h=450/5)
 
         #Halaman 3
         self.add_page()
@@ -218,7 +228,7 @@ class PDF(FPDF):
         self.image('rumus_motorrunres.png',  link='', type='', w=150, h=25)
 
         self.set_xy(40.0,40.0)
-        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+        self.image('plot_motorrunres.png',  link='', type='', w=700/5, h=450/5)
 
         #Kebutuhan Power
         self.set_xy(10.0,150.0)
@@ -230,22 +240,22 @@ class PDF(FPDF):
 
         self.set_xy(10.0,190.0)
         self.set_font('Arial', '', 12)
-        self.cell(w=0.0, h=0.0, align='L', txt="Const T =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Const T = " + str(round(const_t,3)), border=0)
 
         self.set_xy(10.0,195.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="High Acc Const T =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="High Acc Const T = " + str(round(highacc_const_t,3)), border=0)
 
         self.set_xy(10.0,200.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Weakening Point =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Weakening Point = " + str(round(wp,3)), border=0)
 
         self.set_xy(100.0,190.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Avg Acc =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Avg Acc = " + str(round(avg_accel_real,3)), border=0)
 
         self.set_xy(100.0,195.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="P Motor =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="P Motor = " + str(round(p_motor,3)), border=0)
 
         self.set_xy(100.0,200.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="High Acc Weakening Point =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="High Acc Weakening Point = " + str(round(highacc_wp,3)), border=0)
 
         #Halaman 4
         self.add_page()
@@ -256,15 +266,15 @@ class PDF(FPDF):
         self.cell(w=0.0, h=0.0, align='L', txt="Grafik Vehicle Force Running Resistance", border=0)
 
         self.set_xy(40.0,20.0)
-        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+        self.image('plot_vehicleforce.png',  link='', type='', w=700/5, h=450/5)
 
-        #Wheel Force Running Resistance
+        #Wheel Torque Running Resistance
         self.set_xy(10.0,120.0)
         self.set_font('Arial', 'B', 12)
-        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Vehicle Force Running Resistance", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Wheel Torque Running Resistance", border=0)
 
         self.set_xy(40.0,130.0)
-        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+        self.image('plot_wheeltorque.png',  link='', type='', w=700/5, h=450/5)
 
         #Halaman 5
         self.add_page()
@@ -272,10 +282,10 @@ class PDF(FPDF):
         #Motor Force Running Resistance
         self.set_xy(10.0,10.0)
         self.set_font('Arial', 'B', 12)
-        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Motor Force Running Resistance", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Grafik Motor Torque Running Resistance", border=0)
 
         self.set_xy(40.0,20.0)
-        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+        self.image('plot_motortorque.png',  link='', type='', w=700/5, h=450/5)
         
         #Kebutuhan Energi
         self.set_xy(10.0,120.0)
@@ -284,31 +294,31 @@ class PDF(FPDF):
 
         self.set_xy(10.0,130.0)
         self.set_font('Arial', '', 12)
-        self.cell(w=0.0, h=0.0, align='L', txt="V Cruise =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="V Cruise = " + str(round(v_cruise,3)), border=0)
 
         self.set_xy(10.0,135.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="S Cruise =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="S Cruise = " + str(round(s_cruise,3)), border=0)
 
         self.set_xy(10.0,140.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="t Cruise =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="t Cruise = " + str(round(t_cruise,3)) , border=0)
 
         self.set_xy(10.0,145.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="% Cruise =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="% Cruise = " + str(round(cruise_percentage,3)) , border=0)
 
         self.set_xy(80.0,130.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="Pt Cruise =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="Pt Cruise = " + str(round(pt_cruise,3)) , border=0)
 
         self.set_xy(80.0,135.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="P Aux =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="P Aux = " + str(round(p_auxiliary,3)), border=0)
 
         self.set_xy(80.0,140.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="P Cruise =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="P Cruise = " + str(round(p_cruise,3)), border=0)
 
         self.set_xy(150.0,130.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="E Battery =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="E Battery = " + str(round(e_battery,3)), border=0)
 
         self.set_xy(150.0,135.0)
-        self.cell(w=0.0, h=0.0, align='L', txt="P Battery =", border=0)
+        self.cell(w=0.0, h=0.0, align='L', txt="P Battery = " + str(round(p_battery,3)), border=0)
 
         #Grafik Motor Cruise Running Resistance
         self.set_xy(10.0,155.0)
@@ -316,7 +326,7 @@ class PDF(FPDF):
         self.cell(w=0.0, h=0.0, align='L', txt="Grafik Motor Cruise Running Resistance", border=0)
 
         self.set_xy(40.0,165.0)
-        self.image('motorrunres.png',  link='', type='', w=700/5, h=450/5)
+        self.image('plot_cruisetorque.png',  link='', type='', w=700/5, h=450/5)
 
 
 class runres_calc (QMainWindow) :
@@ -333,9 +343,14 @@ class runres_calc (QMainWindow) :
     def calculate_pressed(self):
         #Parameter Kendaraan
         global lebar, tinggi, ca, af,kode, jari_jari
-        global massa_kosong, massa_isi
-        global gearbox, axle, mech_eff
-        global kec_max_kmh, kec_operasi_kmh
+        global massa_kosong, massa_isi, massa_total
+        global gearbox, axle, mech_eff,final_gr
+        global kec_max_kmh, kec_operasi_kmh, kec_max_rpm
+        global p_motor, theta_percentage
+        global e_battery, p_battery, wp
+        global highacc_const_t,const_t
+        global v_cruise, s_cruise, cruise_percentage, p_auxiliary, t_cruise, pt_cruise, p_cruise
+        global avg_accel_real, highacc_wp
 
         #Parameter Lingkungan
         global t_ramp, theta
@@ -363,7 +378,6 @@ class runres_calc (QMainWindow) :
         kec_max_rpm     = final_gr*30*(kec_max_kmh/3.6)/pi/jari_jari
         kec_ops_rpm     = final_gr*30*(kec_operasi_kmh/3.6)/pi/jari_jari
 
-
         t_ramp  = float(self.input_t_ramp.text())
         accel   = kec_max_kmh/3.6/t_ramp
         theta   = float(self.input_theta.text())
@@ -376,8 +390,6 @@ class runres_calc (QMainWindow) :
         g   = float(self.input_g.text())
         ca  = float(self.input_ca.text())
 
-
- 
         # const_t         = float(self.input_const_t.text())
         # highacc_const_t = float(self.input_highacc_const_t.text())
         wp              = float(self.input_wp.text())
@@ -641,6 +653,15 @@ class runres_calc (QMainWindow) :
         ax.set(xlabel='Speed (km/h)', ylabel='Torque (Nm)', title='Motor Running Resistance');
         ax.legend(bbox_to_anchor=[1.1, 1.1], loc='upper right',fontsize='xx-small')
         fig.savefig("plot_motortorque.png")
+
+        fig, ax = plt.subplots()
+        for i in range (0,len(variasi_array)):
+            ax.plot(v_runres, runres_motor[:,i],label = "Runres " + str(gradien[i])+ "'");
+        ax.plot(v_runres,motor_torque,label = "Torque")
+        ax.plot(v_runres,motor_cruise_torque,linestyle='--', label = "Cruise Torque")
+        ax.set(xlabel='Speed (km/h)', ylabel='Torque (Nm)', title='Motor Running Resistance');
+        ax.legend(bbox_to_anchor=[1.1, 1.1], loc='upper right',fontsize='xx-small')
+        fig.savefig("plot_cruisetorque.png")
 
         fig = plt.figure("Line Plot")
         legendFig = plt.figure("Legend plot")
