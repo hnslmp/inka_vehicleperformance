@@ -1,6 +1,8 @@
 # VEHICLE PERFORMANCE APP
 Proyek Magang INKA oleh Hansel Matthew FTUI'18 dan Kemas M Rizki Fadhila FTUI'18. Membuat aplikasi untuk melakukan perhitungan untuk menentukan kebutuhan motor traksi untuk dapat memenuhi performa kendaraan sesuai spesifikasi. Dibuat menggunakan bahasa pemrograman python dan framework QT menggunakan PYQT5
 
+![alt text](https://github.com/hnslmp/inka_vehicleperformance/blob/master/homescreen.png)
+
 ## Fitur
 * Menghitung dan plot hasil performansi kendaraan
 * Menyimpan hasil perhitungan dan disimpan kedalam file pdf
