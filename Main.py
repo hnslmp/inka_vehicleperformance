@@ -73,6 +73,7 @@ wp = 0.0
 avg_accel_real = 0.0
 highacc_wp = 0.0
 
+#Class PDF
 class PDF(FPDF):
     def pdfer(self):
 
